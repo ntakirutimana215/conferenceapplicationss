@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Session Reminder</h2>
+  <p><strong>Attendee:</strong> {{ session_reminder.attendee }}</p>
+  <p><strong>Session:</strong> {{ session_reminder.session }}</p>
+  <p><strong>Reminder Sent:</strong> {{ session_reminder.reminder_sent }}</p>
+{% endblock %}

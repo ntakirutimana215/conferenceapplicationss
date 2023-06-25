@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Conference List</h1>
+  <ul>
+    {% for conference in conferences %}
+      <li><a href="{% url 'conference_detail' conference.pk %}">{{ conference.title }}</a></li>
+    {% empty %}
+      <li>No conferences available.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

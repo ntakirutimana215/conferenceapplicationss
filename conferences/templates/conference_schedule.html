@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>{{ conference.title }} - Schedule</h2>
+  
+  <h3>Sessions:</h3>
+  {% for session in sessions %}
+    <div>
+      <h4>{{ session.title }}</h4>
+      <p>Start Time: {{ session.start_time }}</p>
+      <p>End Time: {{ session.end_time }}</p>
+      <p>Speakers:</p>
+      <ul>
+        {% for speaker in session.speakers.all %}
+          <li>{{ speaker.name }}</li>
+        {% empty %}
+          <li>No speakers assigned.</li>
+        {% endfor %}
+      </ul>
+      <hr>
+    </div>
+  {% empty %}
+    <p>No sessions found.</p>
+  {% endfor %}
+  
+  <a href="{% url 'session_create' conference.pk %}">Add Session</a>
+{% endblock %}

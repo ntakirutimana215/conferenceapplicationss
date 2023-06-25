@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Speaker List</h1>
+  <ul>
+    {% for speaker in speakers %}
+      <li><a href="{% url 'speaker_detail' speaker.pk %}">{{ speaker.name }}</a></li>
+    {% empty %}
+      <li>No speakers available.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

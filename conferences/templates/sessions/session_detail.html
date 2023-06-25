@@ -1,0 +1,16 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Session Details</h2>
+  <p><strong>Title:</strong> {{ session.title }}</p>
+  <p><strong>Start Time:</strong> {{ session.start_time }}</p>
+  <p><strong>End Time:</strong> {{ session.end_time }}</p>
+  <p><strong>Speakers:</strong></p>
+  <ul>
+    {% for speaker in session.speakers.all %}
+      <li>{{ speaker.name }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

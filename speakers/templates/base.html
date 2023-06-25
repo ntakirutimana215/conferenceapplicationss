@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Conference Management System</title>
+    <!-- Add your CSS and JS files here -->
+</head>
+<body>
+    <header>
+        <h1>Conference Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'conference_list' %}">Conferences</a></li>
+                <li><a href="{% url 'speaker_list' %}">Speakers</a></li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}
+        <!-- Content from child templates will be rendered here -->
+        {% endblock %}
+    </main>
+    
+    <footer>
+        <!-- Add footer content here -->
+        &copy; 2023 Conference Management System. All rights reserved.
+    </footer>
+</body>
+</html>
